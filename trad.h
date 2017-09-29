@@ -20,7 +20,7 @@
 #define SALIDA 1
 
 #define entero int
-#define flotante int
+#define flotante float
 #define cadena String
 #define booleana boolean
 
