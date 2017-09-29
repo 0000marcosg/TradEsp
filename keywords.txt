@@ -1,0 +1,42 @@
+#######################################
+# Syntax Coloring Map For Trad_Esp 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+entero	KEYWORD1
+flotante	KEYWORD1
+cadena	KEYWORD1
+booleana	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+
+escribirDigital	KEYWORD2
+espera	KEYWORD2
+modoPin	KEYWORD2
+leerDigital	KEYWORD2
+leerAnalogico	KEYWORD2
+escribirAnalogico	KEYWORD2
+iniciarSerial	KEYWORD2
+imprimirSerial	KEYWORD2
+Si	KEYWORD2
+SiNo	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+SALIDA	LITERAL1
+ENTRADA	LITERAL1
+ENCENDER	LITERAL1
+APAGAR	LITERAL1
+verdadero	LITERAL1	
+falso	LITERAL1	
