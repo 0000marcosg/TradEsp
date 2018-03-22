@@ -25,6 +25,21 @@ iniciarSerial	KEYWORD2
 imprimirSerial	KEYWORD2
 Si	KEYWORD2
 SiNo	KEYWORD2
+sensorDistancia	KEYWORD2
+leerAccelGiro	KEYWORD2
+I2Cread	KEYWORD2
+I2CwriteByte	KEYWORD2
+configAccelGiro	KEYWORD2
+print7S	KEYWORD2
+clear7S	KEYWORD2
+brillo7S	KEYWORD2
+coma7S	KEYWORD2
+testS7S	KEYWORD2
+convertirD27S	KEYWORD2
+setADDR	KEYWORD2
+factoryRST	KEYWORD2
+Mientras	KEYWORD2
+Para	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
