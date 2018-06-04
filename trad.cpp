@@ -1,19 +1,24 @@
 //////////////////////////////////////////////////////////////
-// Trad_Esp                                                 // 
+// Trad_Esp                                                 //
 // Libreria de traduccion de funciones basicas de Arduino.  //
-// Enero 2017.                                              // 
+// Enero 2017.                                              //
 // Marcos Gimenez y Pablo (Malo) Alonso                     //
 // Version Base 2.0                                         //
-////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////
 
 
 #include "trad.h"
+
+////////////////////////////////////////////
+// METODOS Y FUNCIONES DEL NUCLEO ARDUINO //
+////////////////////////////////////////////
+
 
 //digitalWrite
 void escribirDigital(int pin, int mode)
 {
     digitalWrite(pin, mode);
-    
+
 }
 
 //delay
@@ -62,76 +67,38 @@ void iniciarSerial(int vel)
     Serial.begin(vel);
 }
 
-//{///////////////////////////COSAS PARA ACELEROMTERO Y GIROSCOPIO///////////////////////////////////
-void I2Cread(uint8_t Address, uint8_t Register, uint8_t Nbytes, uint8_t* Data)
-{
-	// Set register address
-	Wire.beginTransmission(Address);
-	Wire.write(Register);
-	Wire.endTransmission();
-	 
-	// Read Nbytes
-	Wire.requestFrom(Address, Nbytes); 
-	uint8_t index=0;
-	while (Wire.available())
-	Data[index++]=Wire.read();
-}
+//////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// METODOS AGREGADOS PARA SHIELDS Y COMPONENTES ESPECIFICOS//
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 
-void I2CwriteByte(uint8_t Address, uint8_t Register, uint8_t Data)
-{
-	// Set register address
-	Wire.beginTransmission(Address);
-	Wire.write(Register);
-	Wire.write(Data);
-	Wire.endTransmission();
-}
 
-void configAccelGiro()
-{
-	//MAGIA PARA QUE FUNQUE!!!!!!!!!!
-	Wire.begin();
-	// Set accelerometers low pass filter at 5Hz
-	I2CwriteByte(MPU9250_ADDRESS,29,0x06);
-	// Set gyroscope low pass filter at 5Hz
-	I2CwriteByte(MPU9250_ADDRESS,26,0x06);
-	 
-	 
-	// Configure gyroscope range
-	I2CwriteByte(MPU9250_ADDRESS,27,GYRO_FULL_SCALE_1000_DPS);
-	// Configure accelerometers range
-	I2CwriteByte(MPU9250_ADDRESS,28,ACC_FULL_SCALE_4_G);
-	// Set by pass mode for the magnetometers
-	I2CwriteByte(MPU9250_ADDRESS,0x37,0x02);
-	 
-	// Request continuous magnetometer measurements in 16 bits
-	//I2CwriteByte(MAG_ADDRESS,0x0A,0x16);
-	
-	//pinMode(13, OUTPUT);
-	//Timer1.initialize(10000); // initialize timer1, and set a 1/2 second period
-	//Timer1.attachInterrupt(callback); // attaches callback() as a timer overflow interrupt
-}
+//---------------------------------------------------------//
 
+
+// METODO PARA LEER LOS VALORES DEL ACELEROMETRO Y GIROSCOPIO - METODO PUBLICO
 int leerAccelGiro(char valor)
 {
 	// ::: accelerometer and gyroscope :::
-	
+
 	// Read accelerometer and gyroscope
 	uint8_t Buf[14];
 	I2Cread(MPU9250_ADDRESS,0x3B,14,Buf);
-	 
+
 	// Create 16 bits values from 8 bits data
 	/*
 		// Accelerometer
 		int16_t ax=-(Buf[0]<<8 | Buf[1]);
 		int16_t ay=-(Buf[2]<<8 | Buf[3]);
 		int16_t az=Buf[4]<<8 | Buf[5];
-		 
+
 		// Gyroscope
 		int16_t gx=-(Buf[8]<<8 | Buf[9]);
 		int16_t gy=-(Buf[10]<<8 | Buf[11]);
 		int16_t gz=Buf[12]<<8 | Buf[13];
 	*/
-	 
+
 	// Accelerometer
 	if (valor ==1)
 	{
@@ -145,7 +112,7 @@ int leerAccelGiro(char valor)
 	{
 		return Buf[4]<<8 | Buf[5];
 	}
-	 
+
 	// Gyroscope
 	if (valor ==4)
 	{
@@ -159,9 +126,10 @@ int leerAccelGiro(char valor)
 	{
 		return Buf[12]<<8 | Buf[13];
 	}
-	
+
 }
-/////////////HASTA ACA GIROSCOPIO Y ACELEROMETRO///////////}
+
+
 
 //{///////////////////////////////////////7 SEGMENTOS////////////////////////////////////////////////
 void print7S(byte addres, String toSend)
@@ -273,6 +241,7 @@ void factoryRST()////////ESTO ES PARA CONFIGURAR EL DISPLAY PERO SE DEBE HACER C
   delay(10);
   Serial.write('t');
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////}
 
 //{/////////////////////////////////SENSOR DISTANCIA ULTRASONIDO/////////////////////////////////////
@@ -280,19 +249,19 @@ long sensorDistancia(int trig,int echo)
 {
 	long distancia;
 	long tiempo;
-	
+
 	digitalWrite(trig,LOW); // Por cuestión de estabilización del sensor
 	delayMicroseconds(5);
 	digitalWrite(trig, HIGH); // envío del pulso ultrasónico
 	delayMicroseconds(10);
-	
+
 	// Función para medir la longitud del pulso entrante. Mide el tiempo que transcurrido entre el envío
-	// del pulso ultrasónico y cuando el sensor recibe el rebote, es decir: desde que el pin 12 empieza 
+	// del pulso ultrasónico y cuando el sensor recibe el rebote, es decir: desde que el pin 12 empieza
 	// a recibir el rebote, HIGH, hasta que deja de hacerlo, LOW, la longitud del pulso entrante
-	tiempo=pulseIn(echo, HIGH); 
-	
+	tiempo=pulseIn(echo, HIGH);
+
 	distancia= int(0.017*tiempo); /*fórmula para calcular la distancia obteniendo un valor entero*/
-	
+
 	return distancia;
 }
 ////////////////////////////////////////FIN SENSOR DISTANCIA ULTRASONIDO//////////////////////////////////}
