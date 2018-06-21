@@ -23,18 +23,26 @@
 #define ENTRADA 0
 #define SALIDA 1
 
+//Tipo de Dato
 #define entero int
 #define flotante float
 #define Cadena String
 #define booleana boolean
 
+//Boolean
 #define verdadero true
 #define falso false
 
+//dataflow
 #define Si if
 #define SiNo else
 #define Mientras while
 #define Para for
+
+//funciones para servo
+#define conectar attach
+#define posicion write
+#define desconectar detach
 
 ///////////////////////////////////
 //CONSTANTES PRIVADAS Y AGREGADAS//
@@ -89,6 +97,12 @@ void espera(int tiempo);
       Serial.println(valor);
     }
   }
+
+//tone
+void tono(int pin, int freq, int dur);
+
+//noTone
+void noTono(int pin);
 
 /////////////////////////////////////////////////////
 //FUNCIONES EXTERNAS PARA DISPOSITIVOS DETERMINADOS//

@@ -1,0 +1,5 @@
+21/6/2018
+* Separar los metodos privados de los publicos.
+* Funciones para el giroscopio comentadas
+* Agregados los metodos para la funcion tone()
+* Agregadas las constantes para la libreria servo.h

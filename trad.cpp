@@ -67,6 +67,16 @@ void iniciarSerial(int vel)
     Serial.begin(vel);
 }
 
+//tone
+void tono(int pin, int freq, int dur){
+    tone(pin, freq, dur);
+}
+
+//noTone
+void noTone(int pin){
+    noTone(pin);
+}
+
 //////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // METODOS AGREGADOS PARA SHIELDS Y COMPONENTES ESPECIFICOS//

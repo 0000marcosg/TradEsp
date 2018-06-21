@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map For Trad_Esp 
+# Syntax Coloring Map For Trad_Esp
 #######################################
 
 #######################################
@@ -40,6 +40,10 @@ setADDR	KEYWORD2
 factoryRST	KEYWORD2
 Mientras	KEYWORD2
 Para	KEYWORD2
+tono	KEYWORD2
+conectar	KEYWORD2
+desconectar	KEYWORD2
+posicion	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
@@ -53,5 +57,5 @@ SALIDA	LITERAL1
 ENTRADA	LITERAL1
 ENCENDER	LITERAL1
 APAGAR	LITERAL1
-verdadero	LITERAL1	
-falso	LITERAL1	
+verdadero	LITERAL1
+falso	LITERAL1
