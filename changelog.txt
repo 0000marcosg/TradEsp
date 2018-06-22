@@ -1,3 +1,7 @@
+22/6/2018
+*Agregados tipo de dato: char y const
+*Agregado soporte para flujo de datos switch, case y break
+*Agregado soporte para libreria Keypad.h
 21/6/2018
 * Separar los metodos privados de los publicos.
 * Funciones para el giroscopio comentadas

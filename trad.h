@@ -28,6 +28,8 @@
 #define flotante float
 #define Cadena String
 #define booleana boolean
+#define constante const
+#define caracter char
 
 //Boolean
 #define verdadero true
@@ -38,14 +40,33 @@
 #define SiNo else
 #define Mientras while
 #define Para for
+#define cambio switch
+#define caso case
+#define salir break
 
 //funciones para servo
 #define conectar attach
 #define posicion write
 #define desconectar detach
 
+//funciones para libreria Keypad.h
+#define configTeclas makeKeymap //void, Inicializa el mapa de teclas
+#define teclaPresionada getKey //char, Devuelve la tecla presionada si hay alguna
+#define esperarTecla waitForKey //Espera hasta que una tecla sea presionada, detiene todo el programa
+#define tiempoPresionado setHoldTime //(int) Define el tiempo que se debe presionar para que reconozca la tecla como HOLD
+#define tiempoEspera setDebounceTime //(int) Define el tiempo de espera antes de poder presionar otra tecla
+#define dispararEvento addEventListener //Agrega un evento a las teclas
+#define estado getState //Devuelve un KeyState: IDLE, PRESSED, RELEASED, HOLD
+//#define EventoKey KeypadEvent //Tipo de dato
+typedef char EventoKey;
+#define INACTIVA IDLE //Estado KeyState
+#define PRESIONADA PRESSED //Estado KeyState
+#define SUELTA RELEASED //Estado KeyState
+#define PRESIONANDO HOLD //Estado KeyState
+
+
 ///////////////////////////////////
-//CONSTANTES PRIVADAS Y AGREGADAS//
+//CONSTANTES PRIVADAS EXTERNAS//
 //////////////////////////////////
 
 //Constantes para Giroscopio

@@ -10,7 +10,7 @@ Esta libreria fue pensada para facilitar el uso del lenguaje Arduino en cursos d
 # Referencia
 #### Funciones Soportadas
 
-Retorna | Funcion | Equivalente 
+Retorna | Funcion | Equivalente
 ------- | ------- | -----------
 |`void`| `escribirDigital()`|  `digitalWrite()` |
 |`void`| `espera()`     | `delay()`  
@@ -20,19 +20,21 @@ Retorna | Funcion | Equivalente
 | `void`| `escribirAnalogico()` | `analogWrite()`|
 | `void`| `iniciarSerial()`| `Serial.begin()`|
 | `void`| `imprimirSerial()`|`Serial.print()`|
+| `void`| `tono()`|`tone()`|
+| `void`| `noTono()`|`noTone()`|
 
 #### Tipos de Datos y Constantes
 
 ##### Tipos de Datos
-Tipo | Nombre en TradEsp 
-------- | ------- 
+Tipo | Nombre en TradEsp
+------- | -------
 `int` | `entero`
 `float` | `flotante`
 `String` | `cadena`
 `boolean` | `booleana`
 
 ##### Constantes
-Nombre Original | Nombre en TradEsp 
+Nombre Original | Nombre en TradEsp
 ------- | -------
 `HIGH` | `ENCENDER`
 `LOW` | `APAGAR`
@@ -42,7 +44,7 @@ Nombre Original | Nombre en TradEsp
 `false` | `falso`
 
 ##### Flujo de Datos
-Nombre Original | Nombre en TradEsp 
+Nombre Original | Nombre en TradEsp
 ------- | -------
 `if` | `Si`
 `else` | `SiNo`
@@ -62,7 +64,7 @@ void loop() {
   escribirDigital(13, ENCENDER);
   //Esperamos 1000 milisegundos
   espera(1000);
-  
+
   //Apagamos el led 13 y volvemos a esperar.
   escribirDigital(13, APAGAR);
   espera(1000);

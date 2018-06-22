@@ -9,7 +9,8 @@ entero	KEYWORD1
 flotante	KEYWORD1
 cadena	KEYWORD1
 booleana	KEYWORD1
-
+constante	KEYWORD1
+caracter	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
@@ -41,9 +42,20 @@ factoryRST	KEYWORD2
 Mientras	KEYWORD2
 Para	KEYWORD2
 tono	KEYWORD2
+noTono	KEYWORD2
 conectar	KEYWORD2
 desconectar	KEYWORD2
 posicion	KEYWORD2
+cambio	KEYWORD2
+caso	KEYWORD2
+salir	KEYWORD2
+configTeclas	KEYWORD2
+teclaPresionada	KEYWORD2
+esperarTecla	KEYWORD2
+tiempoEspera	KEYWORD2
+dispararEvento	KEYWORD2
+estado	KEYWORD2
+EventoKey	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
@@ -59,3 +71,7 @@ ENCENDER	LITERAL1
 APAGAR	LITERAL1
 verdadero	LITERAL1
 falso	LITERAL1
+INACTIVA	LITERAL1
+PRESIONADA	LITERAL1
+SUELTA	LITERAL1
+PRESIONANDO	LITERAL1
