@@ -49,6 +49,10 @@
 #define posicion write
 #define desconectar detach
 
+//funciones para stepper
+#define paso step
+#define velocidad setSpeed
+
 //funciones para libreria Keypad.h
 #define configTeclas makeKeymap //void, Inicializa el mapa de teclas
 #define teclaPresionada getKey //char, Devuelve la tecla presionada si hay alguna
