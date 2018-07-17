@@ -56,6 +56,8 @@ tiempoEspera	KEYWORD2
 dispararEvento	KEYWORD2
 estado	KEYWORD2
 EventoKey	KEYWORD2
+paso	KEYWORD2
+velocidad	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
