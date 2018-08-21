@@ -12,6 +12,7 @@
 
 #include <Arduino.h>
 #include <Wire.h> //SDA: A4 y SCL: A5
+#include <FastLED.h>
 
 ///////////////////////////////////
 // CONSTANTES DEL NUCLEO ARDUINO//
@@ -30,6 +31,7 @@
 #define booleana boolean
 #define constante const
 #define caracter char
+#define tiraLed CRGB
 
 //Boolean
 #define verdadero true
@@ -67,6 +69,20 @@ typedef char EventoKey;
 #define PRESIONADA PRESSED //Estado KeyState
 #define SUELTA RELEASED //Estado KeyState
 #define PRESIONANDO HOLD //Estado KeyState
+
+//Colores para tira de leds
+#define Red Rojo
+#define Orange Naranja
+#define Yellow Amarillo
+#define Green Verde
+#define Aqua Celeste
+#define Aqua Turquesa
+#define Blue Azul
+#define Purple Fucsia
+#define Purple Morado
+#define Pink Rosado
+#define Pink Salmon
+#define Black Negro
 
 
 ///////////////////////////////////
@@ -144,6 +160,9 @@ void I2Cread(uint8_t Address, uint8_t Register, uint8_t Nbytes, uint8_t* Data);
 void I2CwriteByte(uint8_t Address, uint8_t Register, uint8_t Data);
 void configAccelGiro();
 
+//Tira LED
+void crearTira(CRGB *tiraLED,int tiraPin, int CANT_LED);
+void encenderTira();
 
 //7-SEGMENTOS
 void print7S(byte addres, String toSend);

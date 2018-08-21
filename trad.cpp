@@ -91,7 +91,7 @@ void noTone(int pin){
 int leerAccelGiro(char valor)
 {
 	// ::: accelerometer and gyroscope :::
-
+	// Valor determina que tipo de dato quiero leer del giroscopio
 	// Read accelerometer and gyroscope
 	uint8_t Buf[14];
 	I2Cread(MPU9250_ADDRESS,0x3B,14,Buf);
@@ -275,3 +275,15 @@ long sensorDistancia(int trig,int echo)
 	return distancia;
 }
 ////////////////////////////////////////FIN SENSOR DISTANCIA ULTRASONIDO//////////////////////////////////}
+
+//{/////////////////////////////////TIRA LEDS/////////////////////////////////////
+void crearTira(CRGB *tiraLED,int tiraPin, int CANT_LED)
+{
+	FastLED.addLeds<WS2811, tiraPin, GRB>(tiraLED, CANT_LED);
+}
+
+void encenderTira()
+{
+    FastLED.show();
+}
+////////////////////////////////////////TIRA LEDS///////////////////////////////////////}
