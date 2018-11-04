@@ -36,6 +36,9 @@ void modoPin(int pin, int mode)
     } else if (mode == 0) // 0 = INPUT
     {
         mode == INPUT;
+    } else if (mode == 2) // 2 = INPUT_PULLUP
+    {
+    	mode == INPUT_PULLUP;
     }
 
     pinMode(pin, mode);
