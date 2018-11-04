@@ -22,6 +22,7 @@
 #define APAGAR 0
 #define ENTRADA 0
 #define SALIDA 1
+#define ENTRADA_PULLUP 2
 
 //Tipo de Dato
 #define entero int
